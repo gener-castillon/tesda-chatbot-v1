@@ -17,8 +17,8 @@ let handleSetupProfileAPI = () => {
                         "call_to_actions": [
                             {
                                 "type": "postback",
-                                "title": "Talk to an Agent",
-                                "payload": "TALK_AGENT"
+                                "title": "Main Menu",
+                                "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",

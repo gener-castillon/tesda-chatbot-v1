@@ -73,8 +73,32 @@ let sendWelcomeMessage = (sender_psid) => {
 let requestTalkToAgent = (sender_psid) => {
     return new Promise((resolve, reject) => {
         try {
-            
+
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+// Set Application Info By Webview
+let setApplicationInfoByWebview = (sender_psid) => {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve("done");
         } catch(e) {
+            reject(e);
+        }
+    });
+};
+
+// Backt to Main Menu
+let mainMenu = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = templateMessage.menuMessage();
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
             reject(e);
         }
     });
@@ -117,5 +141,7 @@ let sendMessage = (sender_psid, response) => {
 module.exports = {
     sendMessage: sendMessage,
     sendWelcomeMessage: sendWelcomeMessage,
-    requestTalkToAgent: requestTalkToAgent
+    requestTalkToAgent: requestTalkToAgent,
+    setApplicationInfoByWebview: setApplicationInfoByWebview,
+    mainMenu: mainMenu
 }

@@ -101,6 +101,10 @@ let handlePostback = async (sender_psid, received_postback) => {
 
         case 'LOCATION':
             break;
+
+        case 'MAIN_MENU':
+            await chatbotService.mainMenu(sender_psid);
+            break;
     
         default:
             console.log("Run default switch case.");
