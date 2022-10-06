@@ -1,6 +1,6 @@
 require("dotenv").config();
-import request from "request";
-import homepageService from "../services/homepageService"
+import homepageService from "../services/homepageService";
+import chatbotService from "../services/chatbotService";
 
 const verifyToken = process.env.VERIFY_TOKEN;
 const pageAccessToken = process.env.PAGE_ACCESS_TOKEN;
@@ -67,7 +67,7 @@ let postWebhook = (req, res) => {
 };
 
 // Handles messages events
-let handleMessage = (sender_psid, received_message) => {
+let handleMessage = async (sender_psid, received_message) => {
 
     let response;
 
@@ -111,7 +111,7 @@ let handleMessage = (sender_psid, received_message) => {
     }
 
     // Sends the response message
-    callSendAPI(sender_psid, response);
+    await chatbotService.sendMessage(sender_psid, response);
 }
 
 // Handles messaging_postbacks events
@@ -131,10 +131,7 @@ let handlePostback = async (sender_psid, received_postback) => {
             break;
         
         case 'GET_STARTED':
-            let name = await homepageService.getFacebookUsername(sender_psid);
-            response = {
-                "text": "Hi there! Welcome "+name+" to TESDA Lyceum of Alabang Page."
-            };
+            await chatbotService.sendWelcomeMessage(sender_psid);
             break;
     
         default:
@@ -143,35 +140,7 @@ let handlePostback = async (sender_psid, received_postback) => {
     }
 
     // Send the message to acknowledge the postback
-    callSendAPI(sender_psid, response);
-}
-
-// Sends response messages via the Send API
-let callSendAPI = async (sender_psid, response) => {
-    await homepageService.markMessageRead(sender_psid);
-    await homepageService.sendTypingOn(sender_psid);
-    // Construct the message body
-    let request_body = {
-        "recipient": {
-            "id": sender_psid
-        },
-        "message": response
-    }
-
-    // Send the HTTP request to the Messenger Platform
-    request({
-        "uri": "https://graph.facebook.com/v6.0/me/messages",
-        "qs": { "access_token": pageAccessToken },
-        "method": "POST",
-        "json": request_body
-    }, async (err, res, body) => {
-        if (!err) {
-            console.log('message sent!');
-            await homepageService.sendTypingOff(sender_psid);
-        } else {
-            console.error("Unable to send message:" + err);
-        }
-    });
+    await chatbotService.sendMessage(sender_psid, response);
 }
 
 let handleSetupProfile = async (req, res) => {
