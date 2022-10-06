@@ -22,8 +22,6 @@ window.extAsyncInit = function () {
     );
 };
 
-console.log(appId);
-
 function validateInputFields() {
     let fn = $("#fn");
     let mn = $("#mn");
