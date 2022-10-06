@@ -75,7 +75,6 @@ let getFacebookUsername = (sender_psid) => {
                     reject("Unable to send message: " + err);
                 }
             });
-            resolve("done");
         } catch (e) {
             reject(e);
         }
