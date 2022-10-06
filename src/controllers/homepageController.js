@@ -127,10 +127,25 @@ let getSetupProfilePage = (req, res) => {
     return res.render("profile.ejs");
 };
 
+let getApplicationPage = (req, res) => {
+    let appId = process.env.FACEBOOK_APP_ID;
+    return res.render("application.ejs", {
+        appId: appId
+    });
+};
+
+let setApplicationInfo = (req, res) => {
+    return res.status(200).json({
+        message: "ok!"
+    });
+};
+
 module.exports = {
     getHomepage: getHomepage,
     getWebhook: getWebhook,
     postWebhook: postWebhook,
     handleSetupProfile: handleSetupProfile,
-    getSetupProfilePage: getSetupProfilePage
+    getSetupProfilePage: getSetupProfilePage,
+    getApplicationPage: getApplicationPage,
+    setApplicationInfo: setApplicationInfo
 };

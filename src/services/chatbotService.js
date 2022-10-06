@@ -48,9 +48,11 @@ let sendWelcomeMessage = (sender_psid) => {
                         "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str,
                         "buttons": [
                             {
-                                "type": "postback",
+                                "type": "web_url",
+                                "url": process.env.URL_WEBVIEW,
                                 "title": "Apply",
-                                "payload": "APPLY"
+                                "webview_height_ration": "tall",
+                                "messenger_extensions": true
                             }
                         ]
                     }

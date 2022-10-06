@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.fix-height {
+    flex: 1;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+input {
+    text-transform: capitalize;
+}
+
+.f1 {
+    font-size: 12px;
+}
+
+.f2 {
+    font-size: 10px;
+    color: #999999;
+}

@@ -10,6 +10,10 @@ let initWebRoutes = (app) => {
     router.post("/set-up-profile", homepageController.handleSetupProfile);
     router.get("/set-up-profile", homepageController.getSetupProfilePage);
 
+    router.get("/application-form", homepageController.getApplicationPage);
+    router.post("/set-application-info", homepageController.setApplicationInfo);
+
+
     return app.use("/", router);
 };
 
