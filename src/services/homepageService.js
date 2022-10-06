@@ -58,6 +58,31 @@ let handleSetupProfileAPI = () => {
     });
 };
 
+let getFacebookUsername = (sender_psid) => {
+    return new Promise((resolve, reject) => {
+        try {
+            let url = 'https://graph.facebook.com/v15.0/'+sender_psid+'?fields=name,username,profile_pic,follower_count,is_user_follow_business,is_business_follow_user&access_token='+pageAccessToken;
+            // Send the HTTP request to the Messenger Platform
+            request({
+                "uri": url,
+                "method": "GET"
+            }, (err, res, body) => {
+                if (!err) {
+                    body = JSON.parse(body);
+                    let name = body.first_name + " " + body.last_name;
+                    resolve(name);
+                } else {
+                    reject("Unable to send message: " + err);
+                }
+            });
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
 module.exports = {
-    handleSetupProfileAPI: handleSetupProfileAPI
+    handleSetupProfileAPI: handleSetupProfileAPI,
+    getFacebookUsername: getFacebookUsername
 }

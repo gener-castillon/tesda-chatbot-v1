@@ -115,7 +115,7 @@ let handleMessage = (sender_psid, received_message) => {
 }
 
 // Handles messaging_postbacks events
-let handlePostback = (sender_psid, received_postback) => {
+let handlePostback = async (sender_psid, received_postback) => {
     let response;
 
     // Get the payload for the postback
@@ -131,8 +131,9 @@ let handlePostback = (sender_psid, received_postback) => {
             break;
         
         case 'GET_STARTED':
+            let name = await homepageService.getFacebookUsername(sender_psid);
             response = {
-                "text": "Hi there! Welcome Fullname to TESDA Lyceum of Alabang Page."
+                "text": "Hi there! Welcome "+name+" to TESDA Lyceum of Alabang Page."
             };
             break;
     
