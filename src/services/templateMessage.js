@@ -1,0 +1,25 @@
+
+let menuMessage = () => {
+    return {
+        "text": "Main Menu",
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "Apply",
+                "payload": "APPLY"
+            }, {
+                "content_type": "text",
+                "title": "Location",
+                "payload": "LOCATION"
+            }, {
+                "content_type": "text",
+                "title": "Talk to agent",
+                "payload": "TALK_AGENT"
+            }
+        ]
+    };
+};
+
+module.exports = {
+    menuMessage: menuMessage
+};

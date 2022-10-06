@@ -74,9 +74,9 @@ let handleMessage = async (sender_psid, received_message) => {
     if (received_message && received_message.quick_reply && received_message.quick_reply.payload) {
         let payload = received_message.quick_reply.payload;
         if (payload === "TALK_AGENT") {
-
+            await chatbotService.requestTalkToAgent(sender_psid);
         } else if (payload === "RESTART_CONVERSATION") {
-            
+            await chatbotService.sendWelcomeMessage(sender_psid);
         }
     }
 
@@ -92,16 +92,14 @@ let handlePostback = async (sender_psid, received_postback) => {
     let payload = received_postback.payload;
 
     switch (payload) {
-        case 'yes':
-            response = { "text": "Thanks!" }
-            break;
-        
-        case 'no':
-            response = { "text": "Oops, try sending another image." }
-            break;
-        
         case 'GET_STARTED':
             await chatbotService.sendWelcomeMessage(sender_psid);
+            break;
+
+        case 'APPLY':
+            break;
+
+        case 'LOCATION':
             break;
     
         default:

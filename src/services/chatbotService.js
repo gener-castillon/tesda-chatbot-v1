@@ -1,6 +1,7 @@
 require("dotenv").config();
 import request from "request";
 import homepageService from "./homepageService";
+import templateMessage from "./templateMessage";
 
 const pageAccessToken = process.env.PAGE_ACCESS_TOKEN;
 
@@ -56,10 +57,24 @@ let sendWelcomeMessage = (sender_psid) => {
                 }
             };
 
+            let response3 = templateMessage.menuMessage();
+
             await sendMessage(sender_psid, response1);
             await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response3);
             resolve("done");
         } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+// Request Talk To Agent Message
+let requestTalkToAgent = (sender_psid) => {
+    return new Promise((resolve, reject) => {
+        try {
+            
+        } catch(e) {
             reject(e);
         }
     });
@@ -101,5 +116,6 @@ let sendMessage = (sender_psid, response) => {
 
 module.exports = {
     sendMessage: sendMessage,
-    sendWelcomeMessage: sendWelcomeMessage
+    sendWelcomeMessage: sendWelcomeMessage,
+    requestTalkToAgent: requestTalkToAgent
 }
