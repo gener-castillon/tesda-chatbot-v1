@@ -90,7 +90,6 @@ let sendMessage = (sender_psid, response) => {
             }, async (err, res, body) => {
                 if (!err) {
                     resolve('message sent!');
-                    await homepageService.sendTypingOff(sender_psid);
                 } else {
                     reject("Unable to send message:" + err);
                 }
