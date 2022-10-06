@@ -89,8 +89,8 @@ let sendMessage = (sender_psid, response) => {
                 "json": request_body
             }, async (err, res, body) => {
                 if (!err) {
-                    await homepageService.sendTypingOff(sender_psid);
                     resolve('message sent!');
+                    await homepageService.sendTypingOff(sender_psid);
                 } else {
                     reject("Unable to send message:" + err);
                 }
