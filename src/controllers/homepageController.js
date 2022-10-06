@@ -147,7 +147,9 @@ let handlePostback = async (sender_psid, received_postback) => {
 }
 
 // Sends response messages via the Send API
-let callSendAPI = (sender_psid, response) => {
+let callSendAPI = async (sender_psid, response) => {
+    await homepageService.markMessageRead(sender_psid);
+    await homepageService.sendTypingOn(sender_psid);
     // Construct the message body
     let request_body = {
         "recipient": {
@@ -162,9 +164,10 @@ let callSendAPI = (sender_psid, response) => {
         "qs": { "access_token": pageAccessToken },
         "method": "POST",
         "json": request_body
-    }, (err, res, body) => {
+    }, async (err, res, body) => {
         if (!err) {
-            console.log('message sent!')
+            console.log('message sent!');
+            await homepageService.sendTypingOff(sender_psid);
         } else {
             console.error("Unable to send message:" + err);
         }
