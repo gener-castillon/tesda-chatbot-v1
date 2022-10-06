@@ -47,11 +47,9 @@ let sendWelcomeMessage = (sender_psid) => {
                         "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str,
                         "buttons": [
                             {
-                                "type": "web_url",
-                                "url": process.env.WEBVIEW_URL,
+                                "type": "postback",
                                 "title": "Apply",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true
+                                "payload": "APPLY"
                             }
                         ]
                     }
@@ -89,6 +87,7 @@ let sendMessage = (sender_psid, response) => {
                 "json": request_body
             }, async (err, res, body) => {
                 if (!err) {
+                    await homepageService.sendTypingOff(sender_psid);
                     resolve('message sent!');
                 } else {
                     reject("Unable to send message:" + err);
