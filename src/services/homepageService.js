@@ -17,18 +17,18 @@ let handleSetupProfileAPI = () => {
                         "call_to_actions": [
                             {
                                 "type": "postback",
-                                "title": "Talk to an agent",
-                                "payload": "CARE_HELP"
+                                "title": "Talk to an Agent",
+                                "payload": "TALK_AGENT"
                             },
                             {
                                 "type": "postback",
-                                "title": "Outfit suggestions",
-                                "payload": "CURATION"
+                                "title": "Restart this conversation",
+                                "payload": "RESTART_CONVERSATION"
                             },
                             {
                                 "type": "web_url",
-                                "title": "Shop now",
-                                "url": "https://www.originalcoastclothing.com/",
+                                "title": "View Facebook Page",
+                                "url": "https://www.facebook.com/profile.php?id=100083313312165",
                                 "webview_height_ratio": "full"
                             }
                         ]
