@@ -40,6 +40,7 @@ let sendWelcomeMessage = (sender_psid) => {
                 str += programs[i] + "\n";
             }
 
+            
             let response2 = {
                 "attachment": {
                     "type": "template",
@@ -51,7 +52,7 @@ let sendWelcomeMessage = (sender_psid) => {
                                 "type": "web_url",
                                 "url": process.env.URL_WEBVIEW,
                                 "title": "Apply",
-                                "webview_height_ration": "tall",
+                                "webview_height_ratio": "tall",
                                 "messenger_extensions": true
                             }
                         ]
