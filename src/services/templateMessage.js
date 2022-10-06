@@ -20,6 +20,13 @@ let menuMessage = () => {
     };
 };
 
+let location = () => {
+    return {
+        "text":"https://goo.gl/maps/VbVMaYxXr3k4id6x6"
+    };
+};
+
 module.exports = {
-    menuMessage: menuMessage
+    menuMessage: menuMessage,
+    location: location
 };

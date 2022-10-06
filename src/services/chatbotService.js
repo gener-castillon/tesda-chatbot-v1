@@ -80,6 +80,19 @@ let requestTalkToAgent = (sender_psid) => {
     });
 };
 
+// Request Location
+let requestLocation = (sender_psid) => {
+    return new Promise(async(resolve, reject) => {
+        try {
+            let response = templateMessage.location();
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch(e) {
+            reject(e);
+        }
+    });
+};
+
 // Set Application Info By Webview
 let setApplicationInfoByWebview = (sender_psid) => {
     return new Promise(async(resolve, reject) => {
@@ -143,5 +156,6 @@ module.exports = {
     sendWelcomeMessage: sendWelcomeMessage,
     requestTalkToAgent: requestTalkToAgent,
     setApplicationInfoByWebview: setApplicationInfoByWebview,
-    mainMenu: mainMenu
+    mainMenu: mainMenu,
+    requestLocation: requestLocation
 }

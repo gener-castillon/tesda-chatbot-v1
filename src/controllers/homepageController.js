@@ -75,8 +75,10 @@ let handleMessage = async (sender_psid, received_message) => {
         let payload = received_message.quick_reply.payload;
         if (payload === "TALK_AGENT") {
             await chatbotService.requestTalkToAgent(sender_psid);
-        } else if (payload === "RESTART_CONVERSATION") {
-            await chatbotService.sendWelcomeMessage(sender_psid);
+        } else if (payload === 'APPLY') {
+
+        } else if (payload === 'LOCATION') {
+            await chatbotService.requestLocation(sender_psid);
         }
     }
 
@@ -96,15 +98,12 @@ let handlePostback = async (sender_psid, received_postback) => {
             await chatbotService.sendWelcomeMessage(sender_psid);
             break;
 
-        case 'APPLY':
-            break;
-
-        case 'LOCATION':
-            break;
-
         case 'MAIN_MENU':
             await chatbotService.mainMenu(sender_psid);
             break;
+        
+        case 'RESTART_CONVERSATION':
+            await chatbotService.sendWelcomeMessage(sender_psid);
     
         default:
             console.log("Run default switch case.");
