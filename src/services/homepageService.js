@@ -61,7 +61,7 @@ let handleSetupProfileAPI = () => {
 let getFacebookUsername = (sender_psid) => {
     return new Promise((resolve, reject) => {
         try {
-            let url = 'https://graph.facebook.com/v15.0/'+sender_psid+'?fields=name,username,profile_pic,follower_count,is_user_follow_business,is_business_follow_user&access_token='+pageAccessToken;
+            let url = 'https://graph.facebook.com/'+sender_psid+'?fields=first_name,last_name,profile_pic&access_token='+pageAccessToken;
             // Send the HTTP request to the Messenger Platform
             request({
                 "uri": url,
