@@ -121,12 +121,26 @@ let handlePostback = (sender_psid, received_postback) => {
     // Get the payload for the postback
     let payload = received_postback.payload;
 
-    // Set the response based on the postback payload
-    if (payload === 'yes') {
-        response = { "text": "Thanks!" }
-    } else if (payload === 'no') {
-        response = { "text": "Oops, try sending another image." }
+    switch (payload) {
+        case 'yes':
+            response = { "text": "Thanks!" }
+            break;
+        
+        case 'no':
+            response = { "text": "Oops, try sending another image." }
+            break;
+        
+        case 'GET_STARTED':
+            response = {
+                "text": "Hi there! Welcome Fullname to TESDA Lyceum of Alabang Page."
+            };
+            break;
+    
+        default:
+            console.log("Run default switch case.");
+            break;
     }
+
     // Send the message to acknowledge the postback
     callSendAPI(sender_psid, response);
 }

@@ -35,7 +35,7 @@ let handleSetupProfileAPI = () => {
                     }
                 ],
                 "whitelisted_domains": [
-                    "https://tesda-chatbot-v1.herokuapp.com"
+                    "https://tesda-chatbot-v1.herokuapp.com/"
                 ]
             };
 
