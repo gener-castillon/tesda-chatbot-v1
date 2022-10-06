@@ -22,6 +22,8 @@ window.extAsyncInit = function () {
     );
 };
 
+console.log("Facebook App ID: " + appId);
+
 function validateInputFields() {
     let fn = $("#fn");
     let mn = $("#mn");
