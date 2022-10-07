@@ -40,7 +40,7 @@ let sendWelcomeMessage = (sender_psid) => {
                 str += programs[i] + "\n";
             }
 
-            
+
             let response2 = {
                 "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str
             };
@@ -70,12 +70,12 @@ let requestTalkToAgent = (sender_psid) => {
 
 // Request Location
 let requestLocation = (sender_psid) => {
-    return new Promise(async(resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         try {
             let response = templateMessage.location();
             await sendMessage(sender_psid, response);
             resolve("done");
-        } catch(e) {
+        } catch (e) {
             reject(e);
         }
     });
@@ -83,23 +83,23 @@ let requestLocation = (sender_psid) => {
 
 // Selected Course
 let selectedCourse = (sender_psid, course = "") => {
-    return new Promise( async(resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         try {
             let response = {
-                "attachment":{
-                    "type":"template",
-                    "payload":{
-                      "template_type":"button",
-                      "text":course,
-                      "buttons":[
-                        {
-                          "type":"postback",
-                          "title":"How to apply?",
-                          "payload":"APPLY"
-                        }
-                      ]
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": course,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "How to apply?",
+                                "payload": "APPLY"
+                            }
+                        ]
                     }
-                  }
+                }
             };
             await sendMessage(sender_psid, response);
             resolve("done");
@@ -111,31 +111,31 @@ let selectedCourse = (sender_psid, course = "") => {
 
 // Ask Question, Training or Assessment
 let askQuestion = (sender_psid) => {
-    return new Promise(async(resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         try {
             let response = {
-                "attachment":{
-                    "type":"template",
-                    "payload":{
-                      "template_type":"button",
-                      "text":"Is this for ",
-                      "buttons":[
-                        {
-                          "type":"postback",
-                          "title":"Training?",
-                          "payload":"TRAINING"
-                        },{
-                            "type":"postback",
-                            "title":"Assessment?",
-                            "payload":"ASSESSMENT"
-                          }
-                      ]
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": "Is this for ",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Training?",
+                                "payload": "TRAINING"
+                            }, {
+                                "type": "postback",
+                                "title": "Assessment?",
+                                "payload": "ASSESSMENT"
+                            }
+                        ]
                     }
-                  }
+                }
             };
-            await sendMessage(sender_psid); 
+            await sendMessage(sender_psid);
             resolve("done");
-        } catch(e) {
+        } catch (e) {
             reject(e);
         }
     });
@@ -143,10 +143,10 @@ let askQuestion = (sender_psid) => {
 
 // Set Application Info By Webview
 let setApplicationInfoByWebview = (sender_psid) => {
-    return new Promise(async(resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         try {
             resolve("done");
-        } catch(e) {
+        } catch (e) {
             reject(e);
         }
     });
