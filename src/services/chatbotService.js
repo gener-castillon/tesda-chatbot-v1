@@ -81,6 +81,34 @@ let requestLocation = (sender_psid) => {
     });
 };
 
+// Selected Course
+let selectedCourse = (sender_psid, course) => {
+    return new Promise( async(resolve, reject) => {
+        try {
+            let response = {
+                "attachment":{
+                    "type":"template",
+                    "payload":{
+                      "template_type":"button",
+                      "text":course,
+                      "buttons":[
+                        {
+                          "type":"postback",
+                          "title":"How to apply?",
+                          "payload":"APPLY"
+                        }
+                      ]
+                    }
+                  }
+            };
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
 // Set Application Info By Webview
 let setApplicationInfoByWebview = (sender_psid) => {
     return new Promise(async(resolve, reject) => {
@@ -145,5 +173,6 @@ module.exports = {
     requestTalkToAgent: requestTalkToAgent,
     setApplicationInfoByWebview: setApplicationInfoByWebview,
     mainMenu: mainMenu,
-    requestLocation: requestLocation
+    requestLocation: requestLocation,
+    selectedCourse: selectedCourse
 }

@@ -64,6 +64,14 @@ let course = () => {
                 "content_type": "text",
                 "title": "10",
                 "payload": "c10"
+            }, {
+                "content_type": "text",
+                "title": "11",
+                "payload": "c11"
+            }, {
+                "content_type": "text",
+                "title": "12",
+                "payload": "c12"
             }
         ]
     };

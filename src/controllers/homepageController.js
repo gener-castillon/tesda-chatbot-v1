@@ -79,6 +79,30 @@ let handleMessage = async (sender_psid, received_message) => {
 
         } else if (payload === 'LOCATION') {
             await chatbotService.requestLocation(sender_psid);
+        } else if (payload === 'c1') {
+            await chatbotService.selectedCourse(sender_psid, "1. Assembly of Solar Nightlight and Post Lamp");
+        } else if (payload === 'c2') {
+            await chatbotService.selectedCourse(sender_psid, "2. Bookkeeping NC III");
+        } else if (payload === 'c3') {
+            await chatbotService.selectedCourse(sender_psid, "3. Bread and Pastry Production NC II");
+        } else if (payload === 'c4') {
+            await chatbotService.selectedCourse(sender_psid, "4. Caregiving NC II");
+        } else if (payload === 'c5') {
+            await chatbotService.selectedCourse(sender_psid, "5. Computer Systems Servicing NC II");
+        } else if (payload === 'c6') {
+            await chatbotService.selectedCourse(sender_psid, "6. Cookery NC II");
+        } else if (payload === 'c7') {
+            await chatbotService.selectedCourse(sender_psid, "7. Driving NC II");
+        } else if (payload === 'c8') {
+            await chatbotService.selectedCourse(sender_psid, "8. Electronic Products Assembly and Servicing NC II");
+        } else if (payload === 'c9') {
+            await chatbotService.selectedCourse(sender_psid, "9. Food and Beverage Services NC II");
+        } else if (payload === 'c10') {
+            await chatbotService.selectedCourse(sender_psid, "10. Housekeeping NC II");
+        } else if (payload === 'c11') {
+            await chatbotService.selectedCourse(sender_psid, "11. Trainers Methodology Level 1");
+        } else if (payload === 'c12') {
+            await chatbotService.selectedCourse(sender_psid, "12. Visual Graphic Design NC III");
         }
     }
 
