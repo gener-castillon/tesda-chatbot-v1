@@ -82,7 +82,7 @@ let requestLocation = (sender_psid) => {
 };
 
 // Selected Course
-let selectedCourse = (sender_psid, course) => {
+let selectedCourse = (sender_psid, course = "") => {
     return new Promise( async(resolve, reject) => {
         try {
             let response = {
