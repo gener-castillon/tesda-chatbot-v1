@@ -42,28 +42,14 @@ let sendWelcomeMessage = (sender_psid) => {
 
             
             let response2 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str,
-                        "buttons": [
-                            {
-                                "type": "web_url",
-                                "url": process.env.URL_WEBVIEW,
-                                "title": "Apply",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true
-                            }
-                        ]
-                    }
-                }
+                "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str
             };
 
             let response3 = templateMessage.menuMessage();
 
             await sendMessage(sender_psid, response1);
             await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response3);
             await sendMessage(sender_psid, response3);
             resolve("done");
         } catch (e) {

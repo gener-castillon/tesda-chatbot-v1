@@ -1,7 +1,7 @@
 
 let menuMessage = () => {
     return {
-        "text": "Main Menu",
+        "text": "How can we you help you today?",
         "quick_replies": [
             {
                 "content_type": "text",
