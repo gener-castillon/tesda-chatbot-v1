@@ -134,7 +134,8 @@ let getApplicationPage = (req, res) => {
     });
 };
 
-let setApplicationInfo = (req, res) => {
+let setApplicationInfo = async (req, res) => {
+    await chatbotService.sendWelcomeMessage(req.body.psid);
     return res.status(200).json({
         message: "ok!"
     });
