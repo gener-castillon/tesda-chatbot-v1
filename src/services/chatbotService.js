@@ -45,7 +45,7 @@ let sendWelcomeMessage = (sender_psid) => {
                 "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str
             };
 
-            let response3 = templateMessage.menuMessage();
+            let response3 = templateMessage.course();
 
             await sendMessage(sender_psid, response1);
             await sendMessage(sender_psid, response2);
