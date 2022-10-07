@@ -22,7 +22,7 @@ let menuMessage = () => {
 
 let location = () => {
     return {
-        "text":"https://goo.gl/maps/VbVMaYxXr3k4id6x6"
+        "text":"We are located at KM 30 National Road, Tunasan, Muntinlupa City.\n\n For more details, check this link: \n https://goo.gl/maps/VbVMaYxXr3k4id6x6"
     };
 };
 
