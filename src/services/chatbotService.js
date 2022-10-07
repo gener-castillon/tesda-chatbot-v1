@@ -109,6 +109,38 @@ let selectedCourse = (sender_psid, course) => {
     });
 };
 
+// Ask Question, Training or Assessment
+let askQuestion = (sender_psid) => {
+    return new Promise(async(resolve, reject) => {
+        try {
+            let response = {
+                "attachment":{
+                    "type":"template",
+                    "payload":{
+                      "template_type":"button",
+                      "text":"Is this for ",
+                      "buttons":[
+                        {
+                          "type":"postback",
+                          "title":"Training?",
+                          "payload":"TRAINING"
+                        },{
+                            "type":"postback",
+                            "title":"Assessment?",
+                            "payload":"ASSESSMENT"
+                          }
+                      ]
+                    }
+                  }
+            };
+            await sendMessage(sender_psid); 
+            resolve("done");
+        } catch(e) {
+            reject(e);
+        }
+    });
+};
+
 // Set Application Info By Webview
 let setApplicationInfoByWebview = (sender_psid) => {
     return new Promise(async(resolve, reject) => {
@@ -174,5 +206,6 @@ module.exports = {
     setApplicationInfoByWebview: setApplicationInfoByWebview,
     mainMenu: mainMenu,
     requestLocation: requestLocation,
-    selectedCourse: selectedCourse
+    selectedCourse: selectedCourse,
+    askQuestion: askQuestion
 }

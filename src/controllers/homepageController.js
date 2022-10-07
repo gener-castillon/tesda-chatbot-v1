@@ -128,6 +128,11 @@ let handlePostback = async (sender_psid, received_postback) => {
         
         case 'RESTART_CONVERSATION':
             await chatbotService.sendWelcomeMessage(sender_psid);
+            break;
+        
+        case 'APPLY':
+            await chatbotService.askQuestion(sender_psid);
+            break;
     
         default:
             console.log("Run default switch case.");
