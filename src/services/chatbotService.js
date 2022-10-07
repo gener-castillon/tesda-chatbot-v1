@@ -133,7 +133,7 @@ let askQuestion = (sender_psid) => {
                     }
                 }
             };
-            await sendMessage(sender_psid);
+            await sendMessage(sender_psid, response);
             resolve("done");
         } catch (e) {
             reject(e);
