@@ -22,7 +22,7 @@ let menuMessage = () => {
 
 let course = () => {
     return {
-        "text": "Preferred Course:",
+        "text": "Select your Preferred Course:",
         "quick_replies": [
             {
                 "content_type": "text",
