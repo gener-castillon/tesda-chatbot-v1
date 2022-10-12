@@ -152,6 +152,28 @@ let setApplicationInfoByWebview = (sender_psid) => {
     });
 };
 
+let setTrainingOrAssessment = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let setNewStudent = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = templateMessage.newStudent();
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
 // Backt to Main Menu
 let mainMenu = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
@@ -207,5 +229,7 @@ module.exports = {
     mainMenu: mainMenu,
     requestLocation: requestLocation,
     selectedCourse: selectedCourse,
-    askQuestion: askQuestion
+    askQuestion: askQuestion,
+    setTrainingOrAssessment: setTrainingOrAssessment,
+    setNewStudent: setNewStudent
 }

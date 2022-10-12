@@ -75,8 +75,6 @@ let handleMessage = async (sender_psid, received_message) => {
         let payload = received_message.quick_reply.payload;
         if (payload === "TALK_AGENT") {
             await chatbotService.requestTalkToAgent(sender_psid);
-        } else if (payload === 'APPLY') {
-
         } else if (payload === 'LOCATION') {
             await chatbotService.requestLocation(sender_psid);
         } else if (payload === 'c1') {
@@ -103,6 +101,8 @@ let handleMessage = async (sender_psid, received_message) => {
             await chatbotService.selectedCourse(sender_psid, "11. Trainers Methodology Level 1");
         } else if (payload === 'c12') {
             await chatbotService.selectedCourse(sender_psid, "12. Visual Graphic Design NC III");
+        } else if (payload === 'NEW_STUDENT') {
+            await chatbotService.setNewStudent(sender_psid);
         }
     }
 
@@ -132,6 +132,14 @@ let handlePostback = async (sender_psid, received_postback) => {
         
         case 'APPLY':
             await chatbotService.askQuestion(sender_psid);
+            break;
+        
+        case 'TRAINING':
+            await chatbotService.setTrainingOrAssessment(sender_psid);
+            break;
+
+        case 'ASSESSMENT':
+            await chatbotService.setTrainingOrAssessment(sender_psid);
             break;
     
         default:

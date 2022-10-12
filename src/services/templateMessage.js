@@ -5,11 +5,11 @@ let menuMessage = () => {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Apply",
-                "payload": "APPLY"
+                "title": "Are you accepting new student?",
+                "payload": "NEW_STUDENT"
             }, {
                 "content_type": "text",
-                "title": "Location",
+                "title": "Where are you located?",
                 "payload": "LOCATION"
             }, {
                 "content_type": "text",
@@ -79,12 +79,19 @@ let course = () => {
 
 let location = () => {
     return {
-        "text": "We are located at KM 30 National Road, Tunasan, Muntinlupa City.\n\nFor more details, follow this link: https://goo.gl/maps/VbVMaYxXr3k4id6x6"
+        "text": "We are located at KM 30 NATIONAL ROAD, TUNASAN, MUNTINLUPA CITY beside St. Peregrine Church.\n\nFor more direction and location details, please follow this link: https://goo.gl/maps/VbVMaYxXr3k4id6x6"
+    };
+};
+
+let newStudent = () => {
+    return {
+        "text": "Yes, we are accepting new student interested in short program and vocational courses."
     };
 };
 
 module.exports = {
     menuMessage: menuMessage,
     location: location,
-    course: course
+    course: course,
+    newStudent: newStudent
 };
