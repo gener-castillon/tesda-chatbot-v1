@@ -45,58 +45,7 @@ let menuMessage = () => {
 
 let course = () => {
     return {
-        "text": "Select your Preferred Course:",
-        "quick_replies": [
-            {
-                "content_type": "text",
-                "title": "1",
-                "payload": "c1"
-            }, {
-                "content_type": "text",
-                "title": "2",
-                "payload": "c2"
-            }, {
-                "content_type": "text",
-                "title": "3",
-                "payload": "c3"
-            }, {
-                "content_type": "text",
-                "title": "4",
-                "payload": "c4"
-            }, {
-                "content_type": "text",
-                "title": "5",
-                "payload": "c5"
-            }, {
-                "content_type": "text",
-                "title": "6",
-                "payload": "c6"
-            }, {
-                "content_type": "text",
-                "title": "7",
-                "payload": "c7"
-            }, {
-                "content_type": "text",
-                "title": "8",
-                "payload": "c8"
-            }, {
-                "content_type": "text",
-                "title": "9",
-                "payload": "c9"
-            }, {
-                "content_type": "text",
-                "title": "10",
-                "payload": "c10"
-            }, {
-                "content_type": "text",
-                "title": "11",
-                "payload": "c11"
-            }, {
-                "content_type": "text",
-                "title": "12",
-                "payload": "c12"
-            }
-        ]
+        "text": "Type the number of your preferred course:"
     };
 };
 

@@ -69,9 +69,6 @@ let postWebhook = (req, res) => {
 
 // Handles messages events
 let handleMessage = async (sender_psid, received_message) => {
-
-    let response;
-
     if (received_message && received_message.quick_reply && received_message.quick_reply.payload) {
         let payload = received_message.quick_reply.payload;
         if (payload === "TALK_AGENT") {
@@ -126,10 +123,16 @@ let handleMessage = async (sender_psid, received_message) => {
         } else if (payload === 'NEW_STUDENT') {
             await chatbotService.setNewStudent(sender_psid);
         }
+    } else if (received_message.text) {
+        let str = received_message.text;
+        if (str == "1") {
+            templateMessage.courseIndex = 0;
+            await chatbotService.selectedCourse(sender_psid, "1. " + templateMessage.programs[templateMessage.courseIndex]);
+        } else if (str == "2") {
+            templateMessage.courseIndex = 1;
+            await chatbotService.selectedCourse(sender_psid, "1. " + templateMessage.programs[templateMessage.courseIndex]);
+        }
     }
-
-    // Sends the response message
-    await chatbotService.sendMessage(sender_psid, response);
 }
 
 // Handles messaging_postbacks events
@@ -147,15 +150,15 @@ let handlePostback = async (sender_psid, received_postback) => {
         case 'MAIN_MENU':
             await chatbotService.mainMenu(sender_psid);
             break;
-        
+
         case 'RESTART_CONVERSATION':
             await chatbotService.sendWelcomeMessage(sender_psid);
             break;
-        
+
         case 'APPLY':
             await chatbotService.askQuestion(sender_psid);
             break;
-        
+
         case 'TRAINING':
             await chatbotService.setTrainingOrAssessment(sender_psid);
             break;
@@ -163,7 +166,7 @@ let handlePostback = async (sender_psid, received_postback) => {
         case 'ASSESSMENT':
             await chatbotService.setTrainingOrAssessment(sender_psid);
             break;
-    
+
         default:
             console.log("Run default switch case.");
             break;

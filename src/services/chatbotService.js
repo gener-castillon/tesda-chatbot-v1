@@ -19,15 +19,15 @@ let sendWelcomeMessage = (sender_psid) => {
                 }
             };
 
-            let str = "";
+            let str1 = "";
 
             for (let i = 0; i < templateMessage.programs.length; i++) {
-                str += (i + 1) + ". " + templateMessage.programs[i] + "\n";
+                str1 += (i + 1) + ". " + templateMessage.programs[i] + "\n";
             }
 
 
             let response2 = {
-                "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str
+                "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str1
             };
  
             let response3 = templateMessage.course();
