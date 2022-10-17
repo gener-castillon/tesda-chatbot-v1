@@ -114,6 +114,15 @@ let handleMessage = async (sender_psid, received_message) => {
         } else if (payload === 'c12') {
             templateMessage.courseIndex = 11;
             await chatbotService.selectedCourse(sender_psid, "12. " + templateMessage.programs[templateMessage.courseIndex]);
+        } else if (payload === 'c13') {
+            templateMessage.courseIndex = 12;
+            await chatbotService.selectedCourse(sender_psid, "13. " + templateMessage.programs[templateMessage.courseIndex]);
+        } else if (payload === 'c14') {
+            templateMessage.courseIndex = 13;
+            await chatbotService.selectedCourse(sender_psid, "14. " + templateMessage.programs[templateMessage.courseIndex]);
+        } else if (payload === 'c15') {
+            templateMessage.courseIndex = 14;
+            await chatbotService.selectedCourse(sender_psid, "15. " + templateMessage.programs[templateMessage.courseIndex]);
         } else if (payload === 'NEW_STUDENT') {
             await chatbotService.setNewStudent(sender_psid);
         }
