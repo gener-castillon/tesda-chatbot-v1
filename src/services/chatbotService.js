@@ -94,7 +94,7 @@ let selectedCourse = (sender_psid, course = "") => {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "How to apply?",
+                                "title": "How to apply?" + homepageService.courseIndex,
                                 "payload": "APPLY"
                             }
                         ]

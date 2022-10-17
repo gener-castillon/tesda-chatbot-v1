@@ -1,3 +1,4 @@
+let courseIndex = 0;
 
 let menuMessage = () => {
     return {
@@ -5,11 +6,11 @@ let menuMessage = () => {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Are you accepting new student?",
+                "title": "New Student?",
                 "payload": "NEW_STUDENT"
             }, {
                 "content_type": "text",
-                "title": "Where are you located?",
+                "title": "Location",
                 "payload": "LOCATION"
             }, {
                 "content_type": "text",
@@ -93,5 +94,6 @@ module.exports = {
     menuMessage: menuMessage,
     location: location,
     course: course,
-    newStudent: newStudent
+    newStudent: newStudent,
+    courseIndex: courseIndex
 };
