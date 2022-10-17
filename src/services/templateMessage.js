@@ -1,25 +1,25 @@
 let courseIndex = 0;
 
 let programs = [
-    "Assembly of Solar Nightlight and Post Lamp",
-    "Bartending NC II",
-    "Bookkeeping NC III",
-    "Bread and Pastry Production NC II",
-    "Computer Systems Servicing NC II",
-    "Cookery NC II",
-    "Driving NC II",
-    "Electronic Products Assembly and Servicing NC II",
-    "Events Management Services NC III",
-    "Food and Beverage Services NC II",
-    "Front Office Services NC II",
-    "Housekeeping NC II",
-    "Real Estate Services NC II",
-    "Trainers Methodology Level I",
-    "Visual Graphic Design NC III"
+    "Assembly of Solar Nightlight and Post Lamp", //0
+    "Bartending NC II", // 1
+    "Bookkeeping NC III", // 2
+    "Bread and Pastry Production NC II", // 3
+    "Computer Systems Servicing NC II", // 4
+    "Cookery NC II", // 5
+    "Driving NC II", // 6
+    "Electronic Products Assembly and Servicing NC II", // 7
+    "Events Management Services NC III", // 8
+    "Food and Beverage Services NC II", // 9
+    "Front Office Services NC II", // 10
+    "Housekeeping NC II", // 11
+    "Real Estate Services NC II", // 12
+    "Trainers Methodology Level I", // 13
+    "Visual Graphic Design NC III" // 14
 ];
 
 let progDetails = [
-    
+    programs[0].toUpperCase() + " \n "
 ];
 
 let menuMessage = () => {
@@ -67,5 +67,6 @@ module.exports = {
     course: course,
     newStudent: newStudent,
     courseIndex: courseIndex,
-    programs: programs
+    programs: programs,
+    progDetails: progDetails
 };
