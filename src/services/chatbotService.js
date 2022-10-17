@@ -78,7 +78,7 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is for training only.",
+                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is available for training only.",
                             "buttons": [
                                 {
                                     "type": "postback",
@@ -95,7 +95,7 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is for assessment only.",
+                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is available for assessment only.",
                             "buttons": [
                                 {
                                     "type": "postback",
