@@ -2,15 +2,18 @@ let courseIndex = 0;
 
 let programs = [
     "Assembly of Solar Nightlight and Post Lamp",
+    "Bartending NC II",
     "Bookkeeping NC III",
     "Bread and Pastry Production NC II",
-    "Caregiving NC II",
     "Computer Systems Servicing NC II",
     "Cookery NC II",
     "Driving NC II",
     "Electronic Products Assembly and Servicing NC II",
+    "Events Management Services NC III",
     "Food and Beverage Services NC II",
+    "Front Office Services NC II",
     "Housekeeping NC II",
+    "Real Estate Services NC II",
     "Trainers Methodology Level I",
     "Visual Graphic Design NC III"
 ];

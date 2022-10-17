@@ -75,7 +75,7 @@ let selectedCourse = (sender_psid, course = "") => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": course + " " + templateMessage.courseIndex,
+                        "text": course,
                         "buttons": [
                             {
                                 "type": "postback",
