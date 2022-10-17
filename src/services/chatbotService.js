@@ -112,7 +112,7 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "You selected \"" + course.toUpperCase() + "\" course. Training and Assessment is available. Is this for",
+                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is available for Training and Assessment. Is this for",
                             "buttons": [
                                 {
                                     "type": "postback",
