@@ -125,12 +125,12 @@ let handleMessage = async (sender_psid, received_message) => {
         }
     } else if (received_message.text) {
         let str = received_message.text;
-        if (str == "1") {
+        if (str.includes("1")) {
             templateMessage.courseIndex = 0;
             await chatbotService.selectedCourse(sender_psid, "1. " + templateMessage.programs[templateMessage.courseIndex]);
-        } else if (str == "2") {
+        } else if (str.includes("2")) {
             templateMessage.courseIndex = 1;
-            await chatbotService.selectedCourse(sender_psid, "1. " + templateMessage.programs[templateMessage.courseIndex]);
+            await chatbotService.selectedCourse(sender_psid, "2. " + templateMessage.programs[templateMessage.courseIndex]);
         }
     }
 }
