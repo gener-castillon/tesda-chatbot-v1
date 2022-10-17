@@ -1,5 +1,24 @@
 let courseIndex = 0;
 
+let programs = [
+    "Assembly of Solar Nightlight and Post Lamp",
+    "Bookkeeping NC III",
+    "Bread and Pastry Production NC II",
+    "Caregiving NC II",
+    "Computer Systems Servicing NC II",
+    "Cookery NC II",
+    "Driving NC II",
+    "Electronic Products Assembly and Servicing NC II",
+    "Food and Beverage Services NC II",
+    "Housekeeping NC II",
+    "Trainers Methodology Level I",
+    "Visual Graphic Design NC III"
+];
+
+let progDetails = [
+    
+];
+
 let menuMessage = () => {
     return {
         "text": "How can we you help you today?",
@@ -95,5 +114,6 @@ module.exports = {
     location: location,
     course: course,
     newStudent: newStudent,
-    courseIndex: courseIndex
+    courseIndex: courseIndex,
+    programs: programs
 };

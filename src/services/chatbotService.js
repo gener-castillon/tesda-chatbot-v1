@@ -19,32 +19,17 @@ let sendWelcomeMessage = (sender_psid) => {
                 }
             };
 
-            let programs = [
-                "1. Assembly of Solar Nightlight and Post Lamp",
-                "2. Bookkeeping NC III",
-                "3. Bread and Pastry Production NC II",
-                "4. Caregiving NC II",
-                "5. Computer Systems Servicing NC II",
-                "6. Cookery NC II",
-                "7. Driving NC II",
-                "8. Electronic Products Assembly and Servicing NC II",
-                "9. Food and Beverage Services NC II",
-                "10. Housekeeping NC II",
-                "11. Trainers Methodology Level 1",
-                "12. Visual Graphic Design NC III"
-            ];
-
             let str = "";
 
-            for (let i = 0; i < programs.length; i++) {
-                str += programs[i] + "\n";
+            for (let i = 0; i < templateMessage.programs.length; i++) {
+                str += (i + 1) + ". " + templateMessage.programs[i] + "\n";
             }
 
 
             let response2 = {
                 "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str
             };
-
+ 
             let response3 = templateMessage.course();
 
             await sendMessage(sender_psid, response1);
@@ -90,7 +75,7 @@ let selectedCourse = (sender_psid, course = "") => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": course + templateMessage.courseIndex,
+                        "text": course + " " + templateMessage.courseIndex,
                         "buttons": [
                             {
                                 "type": "postback",
