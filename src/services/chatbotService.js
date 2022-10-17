@@ -70,26 +70,65 @@ let requestLocation = (sender_psid) => {
 let selectedCourse = (sender_psid, course = "") => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": "You selected " + course + ". Is this for",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Training?",
-                                "payload": "TRAINING"
-                            }, {
-                                "type": "postback",
-                                "title": "Assessment?",
-                                "payload": "ASSESSMENT"
-                            }
-                        ]
+            let response;
+
+            if (course.includes(templateMessage.programs[0])) {
+                response = {
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "button",
+                            "text": "You selected \"" + course + "\" course. This is for training only.",
+                            "buttons": [
+                                {
+                                    "type": "postback",
+                                    "title": "Apply Now",
+                                    "payload": "APPLY"
+                                }
+                            ]
+                        }
                     }
-                }
-            };
+                };
+            } else if (course.includes(templateMessage.programs[8]) || course.includes(templateMessage.programs[12]) || course.includes(templateMessage.programs[10])) {
+                response = {
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "button",
+                            "text": "You selected \"" + course + "\" course. This is for assessment only.",
+                            "buttons": [
+                                {
+                                    "type": "postback",
+                                    "title": "Apply Now",
+                                    "payload": "APPLY"
+                                }
+                            ]
+                        }
+                    }
+                };
+            } else {
+                response = {
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "button",
+                            "text": "You selected \"" + course + "\" course. Training and Assessment is available. Is this for",
+                            "buttons": [
+                                {
+                                    "type": "postback",
+                                    "title": "Training?",
+                                    "payload": "TRAINING"
+                                }, {
+                                    "type": "postback",
+                                    "title": "Assessment?",
+                                    "payload": "ASSESSMENT"
+                                }
+                            ]
+                        }
+                    }
+                };
+            }
+
             await sendMessage(sender_psid, response);
             resolve("done");
         } catch (e) {
