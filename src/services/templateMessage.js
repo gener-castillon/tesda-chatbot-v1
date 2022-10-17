@@ -95,18 +95,6 @@ let course = () => {
                 "content_type": "text",
                 "title": "12",
                 "payload": "c12"
-            }, {
-                "content_type": "text",
-                "title": "13",
-                "payload": "c13"
-            }, {
-                "content_type": "text",
-                "title": "14",
-                "payload": "c14"
-            }, {
-                "content_type": "text",
-                "title": "15",
-                "payload": "c15"
             }
         ]
     };
