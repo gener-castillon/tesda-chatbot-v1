@@ -90,11 +90,11 @@ let selectedCourse = (sender_psid, course = "") => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": course,
+                        "text": course + templateMessage.courseIndex,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "How to apply?" + homepageService.courseIndex,
+                                "title": "How to apply?",
                                 "payload": "APPLY"
                             }
                         ]
