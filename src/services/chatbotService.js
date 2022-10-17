@@ -75,12 +75,16 @@ let selectedCourse = (sender_psid, course = "") => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": course,
+                        "text": "You selected " + course + ". Is this for",
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "How to apply?",
-                                "payload": "APPLY"
+                                "title": "Training?",
+                                "payload": "TRAINING"
+                            }, {
+                                "type": "postback",
+                                "title": "Assessment?",
+                                "payload": "ASSESSMENT"
                             }
                         ]
                     }
@@ -99,24 +103,7 @@ let askQuestion = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": "Is this for ",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Training?",
-                                "payload": "TRAINING"
-                            }, {
-                                "type": "postback",
-                                "title": "Assessment?",
-                                "payload": "ASSESSMENT"
-                            }
-                        ]
-                    }
-                }
+                
             };
             await sendMessage(sender_psid, response);
             resolve("done");
