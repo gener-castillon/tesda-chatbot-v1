@@ -78,12 +78,12 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is available for training only.",
+                            "text": "" + course.toUpperCase() + " course selected. This course is available for training only.",
                             "buttons": [
                                 {
                                     "type": "postback",
                                     "title": "Apply Now",
-                                    "payload": "APPLY"
+                                    "payload": "TRAINING"
                                 }
                             ]
                         }
@@ -95,12 +95,12 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is available for assessment only.",
+                            "text": "" + course.toUpperCase() + " course selected. This course is available for assessment only.",
                             "buttons": [
                                 {
                                     "type": "postback",
                                     "title": "Apply Now",
-                                    "payload": "APPLY"
+                                    "payload": "ASSESSMENT"
                                 }
                             ]
                         }
@@ -112,7 +112,7 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "\"" + course.toUpperCase() + "\" course selected. This course is available for Training and Assessment. Is this for",
+                            "text": "" + course.toUpperCase() + " course selected. This course is available for Training and Assessment. Is this for",
                             "buttons": [
                                 {
                                     "type": "postback",
