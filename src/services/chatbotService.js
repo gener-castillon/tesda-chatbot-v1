@@ -28,7 +28,7 @@ let sendWelcomeMessage = (sender_psid) => {
             
             // Trainings and Assessments
             for (let i = 0; i < templateMessage.programs.length; i++) {
-                let str = templateMessage.split("+");
+                let str = templateMessage.programs[i].split("+");
                 if (str[1] == "ta") {
                     ta += (i + 1) + ". " + str[0] + "\n";
                     count += 1;
@@ -37,7 +37,7 @@ let sendWelcomeMessage = (sender_psid) => {
 
             // Trainings
             for (let i = 0; i < templateMessage.programs.length; i++) {
-                let str = templateMessage.split("+");
+                let str = templateMessage.programs[i].split("+");
                 if (str[1] == "t") {
                     count += 1;
                     t += (count) + ". " + str[0] + "\n";
@@ -46,7 +46,7 @@ let sendWelcomeMessage = (sender_psid) => {
 
             // Assessments
             for (let i = 0; i < templateMessage.programs.length; i++) {
-                let str = templateMessage.split("+");
+                let str = templateMessage.programs[i].split("+");
                 if (str[1] == "a") {
                     count += 1;
                     a += (count) + ". " + str[0] + "\n";
@@ -60,7 +60,6 @@ let sendWelcomeMessage = (sender_psid) => {
  
             let response3 = templateMessage.course();
 
-            //await sendMessage(sender_psid, response1);
             await sendMessage(sender_psid, response2);
             await sendMessage(sender_psid, response3);
             resolve("done");
