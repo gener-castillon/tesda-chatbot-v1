@@ -19,20 +19,48 @@ let sendWelcomeMessage = (sender_psid) => {
                 }
             };
 
-            let str1 = "";
+            let ta = "";
+            let t = "";
+            let a = "";
+            let count = 0;
 
+            let str1 = "";
+            
+            // Trainings and Assessments
             for (let i = 0; i < templateMessage.programs.length; i++) {
-                str1 += (i + 1) + ". " + templateMessage.programs[i] + "\n";
+                let str = templateMessage.split("+");
+                if (str[1] == "ta") {
+                    ta += (i + 1) + ". " + str[0] + "\n";
+                    count += 1;
+                }
             }
 
+            // Trainings
+            for (let i = 0; i < templateMessage.programs.length; i++) {
+                let str = templateMessage.split("+");
+                if (str[1] == "t") {
+                    count += 1;
+                    t += (count) + ". " + str[0] + "\n";
+                }
+            }
 
+            // Assessments
+            for (let i = 0; i < templateMessage.programs.length; i++) {
+                let str = templateMessage.split("+");
+                if (str[1] == "a") {
+                    count += 1;
+                    a += (count) + ". " + str[0] + "\n";
+                }
+            }
+
+            str1 = "TRAININGS AND ASSESSMENTS\n" + ta + "\n\nTRAININGS\n" + t + "\n\nASSESSMENTS\n" + a;
             let response2 = {
                 "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str1
             };
  
             let response3 = templateMessage.course();
 
-            await sendMessage(sender_psid, response1);
+            //await sendMessage(sender_psid, response1);
             await sendMessage(sender_psid, response2);
             await sendMessage(sender_psid, response3);
             resolve("done");

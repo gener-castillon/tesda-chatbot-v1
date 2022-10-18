@@ -1,21 +1,21 @@
 let courseIndex = 0;
 
 let programs = [
-    "Assembly of Solar Nightlight and Post Lamp", //0
-    "Bartending NC II", // 1
-    "Bookkeeping NC III", // 2
-    "Bread and Pastry Production NC II", // 3
-    "Computer Systems Servicing NC II", // 4
-    "Cookery NC II", // 5
-    "Driving NC II", // 6
-    "Electronic Products Assembly and Servicing NC II", // 7
-    "Events Management Services NC III", // 8
-    "Food and Beverage Services NC II", // 9
-    "Front Office Services NC II", // 10
-    "Housekeeping NC II", // 11
-    "Real Estate Services NC II", // 12
-    "Trainers Methodology Level I", // 13
-    "Visual Graphic Design NC III" // 14
+    "Assembly of Solar Nightlight and Post Lamp+t", //0
+    "Bartending NC II+ta", // 1
+    "Bookkeeping NC III+ta", // 2
+    "Bread and Pastry Production NC II+ta", // 3
+    "Computer Systems Servicing NC II+ta", // 4
+    "Cookery NC II+ta", // 5
+    "Driving NC II+ta", // 6
+    "Electronic Products Assembly and Servicing NC II+ta", // 7
+    "Events Management Services NC III+t", // 8
+    "Food and Beverage Services NC II+ta", // 9
+    "Front Office Services NC II+a", // 10
+    "Housekeeping NC II+ta", // 11
+    "Real Estate Services NC II+a", // 12
+    "Trainers Methodology Level I+ta", // 13
+    "Visual Graphic Design NC III+ta" // 14
 ];
 
 let trainingHours = [
