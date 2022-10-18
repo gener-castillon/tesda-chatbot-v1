@@ -98,14 +98,14 @@ let selectedCourse = (sender_psid, course = "") => {
     return new Promise(async (resolve, reject) => {
         try {
             let response;
-
+            let str = course.split("+");
             if (course.includes(templateMessage.programs[0])) {
                 response = {
                     "attachment": {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "" + course.toUpperCase() + " course selected. This course is available for training only.",
+                            "text": "" + str[0].toUpperCase() + " course selected. This course is available for training only.",
                             "buttons": [
                                 {
                                     "type": "postback",
@@ -122,7 +122,7 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "" + course.toUpperCase() + " course selected. This course is available for assessment only.",
+                            "text": "" + str[0].toUpperCase() + " course selected. This course is available for assessment only.",
                             "buttons": [
                                 {
                                     "type": "postback",
@@ -139,7 +139,7 @@ let selectedCourse = (sender_psid, course = "") => {
                         "type": "template",
                         "payload": {
                             "template_type": "button",
-                            "text": "" + course.toUpperCase() + " course selected. This course is available for Training and Assessment. Is this for",
+                            "text": "" + str[0].toUpperCase() + " course selected. This course is available for Training and Assessment. Is this for",
                             "buttons": [
                                 {
                                     "type": "postback",
