@@ -210,6 +210,20 @@ let mainMenu = (sender_psid) => {
     });
 };
 
+let errorMessage = (sender_psid) => {
+    return new Promise(async(resolve, reject) => {
+        try {
+            let response = {
+                "text": "Invalid! Input number only."
+            };
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
 // Send Message
 let sendMessage = (sender_psid, response) => {
     return new Promise(async (resolve, reject) => {
@@ -255,5 +269,6 @@ module.exports = {
     askQuestion: askQuestion,
     setNewStudent: setNewStudent,
     setTrainingDetails: setTrainingDetails,
-    setAssessmentsDetails: setAssessmentsDetails
+    setAssessmentsDetails: setAssessmentsDetails,
+    errorMessage: errorMessage
 }

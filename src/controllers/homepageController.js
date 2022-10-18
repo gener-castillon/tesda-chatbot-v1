@@ -125,6 +125,8 @@ let handleMessage = async (sender_psid, received_message) => {
         } else if (str == "15") {
             templateMessage.courseIndex = 14;
             await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
+        } else {
+            await chatbotService.errorMessage(sender_psid);
         }
     }
 }
