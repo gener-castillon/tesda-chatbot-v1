@@ -82,64 +82,49 @@ let handleMessage = async (sender_psid, received_message) => {
         let str = received_message.text;
         if (str == "1") {
             templateMessage.courseIndex = 0;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "2") {
             templateMessage.courseIndex = 1;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "3") {
             templateMessage.courseIndex = 2;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "4") {
             templateMessage.courseIndex = 3;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "5") {
             templateMessage.courseIndex = 4;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "6") {
             templateMessage.courseIndex = 5;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "7") {
             templateMessage.courseIndex = 6;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "8") {
             templateMessage.courseIndex = 7;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "9") {
             templateMessage.courseIndex = 8;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "10") {
             templateMessage.courseIndex = 9;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "11") {
             templateMessage.courseIndex = 10;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "12") {
             templateMessage.courseIndex = 11;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "13") {
             templateMessage.courseIndex = 12;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "14") {
             templateMessage.courseIndex = 13;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "15") {
             templateMessage.courseIndex = 14;
-            let str = templateMessage.programs[templateMessage.courseIndex].split("+");
-            await chatbotService.selectedCourse(sender_psid, str[0]);
+            await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else {
             await chatbotService.errorMessage(sender_psid);
         }
