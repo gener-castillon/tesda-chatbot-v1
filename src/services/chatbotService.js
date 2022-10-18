@@ -166,7 +166,7 @@ let setApplicationInfoByWebview = (sender_psid) => {
 let setTrainingDetails = (sender_psid) => {
     return new Promise(async(resolve, reject) => {
         try {
-            let response = templateMessage.trainingDetails();
+            let response = templateMessage.trainingDetails(templateMessage.courseIndex);
             await sendMessage(sender_psid, response);
             resolve("done");
         } catch (e) {

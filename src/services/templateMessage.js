@@ -54,9 +54,9 @@ let classMode = [
     "Class mode is blended, online or face-to-face",
 ];
 
-let trainingDetails = () => {
+let trainingDetails = (i = 0) => {
     return {
-        "text": programs[courseIndex].toUpperCase() + " (" + trainingHours[courseIndex] + ")\n\n•" + classMode[courseIndex] + "\n\nTo enroll present the following documents:\n1. Copy of ID\n2. Birth Certificate\n3. Duly Accomplished Application Form\n\nRegarding for the tuition fee, schedule and other details please direct us through by calling 8569324 local 146 or personal here in our office. Thank you" 
+        "text": programs[i].toUpperCase() + " (" + trainingHours[i] + ")\n\n•" + classMode[i] + "\n\nTo enroll present the following documents:\n1. Copy of ID\n2. Birth Certificate\n3. Duly Accomplished Application Form\n\nRegarding for the tuition fee, schedule and other details please direct us through by calling 8569324 local 146 or personal here in our office. Thank you" 
     };
 };
 
