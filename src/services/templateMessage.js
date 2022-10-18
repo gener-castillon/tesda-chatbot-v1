@@ -9,7 +9,7 @@ let programs = [
     "Cookery NC II+ta", // 5
     "Driving NC II+ta", // 6
     "Electronic Products Assembly and Servicing NC II+ta", // 7
-    "Events Management Services NC III+t", // 8
+    "Events Management Services NC III+a", // 8
     "Food and Beverage Services NC II+ta", // 9
     "Front Office Services NC II+a", // 10
     "Housekeeping NC II+ta", // 11

@@ -30,8 +30,8 @@ let sendWelcomeMessage = (sender_psid) => {
             for (let i = 0; i < templateMessage.programs.length; i++) {
                 let str = templateMessage.programs[i].split("+");
                 if (str[1] == "ta") {
-                    ta += (i + 1) + ". " + str[0] + "\n";
                     count += 1;
+                    ta += (count) + ". " + str[0] + "\n";
                 }
             }
 
@@ -53,7 +53,7 @@ let sendWelcomeMessage = (sender_psid) => {
                 }
             }
 
-            str1 = "TRAININGS AND ASSESSMENTS\n" + ta + "\n\nTRAININGS\n" + t + "\n\nASSESSMENTS\n" + a;
+            str1 = "TRAININGS AND ASSESSMENTS\n" + ta + "\nTRAININGS\n" + t + "\nASSESSMENTS\n" + a;
             let response2 = {
                 "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str1
             };
