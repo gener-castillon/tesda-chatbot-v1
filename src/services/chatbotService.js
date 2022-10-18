@@ -26,12 +26,14 @@ let sendWelcomeMessage = (sender_psid) => {
 
             let str1 = "";
             
+            let programs = [];
             // Trainings and Assessments
             for (let i = 0; i < templateMessage.programs.length; i++) {
                 let str = templateMessage.programs[i].split("+");
                 if (str[1] == "ta") {
                     count += 1;
                     ta += (count) + ". " + str[0] + "\n";
+                    programs.push(str[0]);
                 }
             }
 
@@ -41,6 +43,7 @@ let sendWelcomeMessage = (sender_psid) => {
                 if (str[1] == "t") {
                     count += 1;
                     t += (count) + ". " + str[0] + "\n";
+                    programs.push(str[0]);
                 }
             }
 
@@ -50,8 +53,11 @@ let sendWelcomeMessage = (sender_psid) => {
                 if (str[1] == "a") {
                     count += 1;
                     a += (count) + ". " + str[0] + "\n";
+                    programs.push(str[0]);
                 }
             }
+
+            templateMessage.programs = programs;
 
             str1 = "TRAININGS AND ASSESSMENTS\n" + ta + "\nTRAININGS\n" + t + "\nASSESSMENTS\n" + a;
             let response2 = {

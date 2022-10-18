@@ -1,40 +1,39 @@
 let courseIndex = 0;
 
 let programs = [
-    "Bartending NC II+ta", // 1
-    "Bookkeeping NC III+ta", // 2
-    "Bread and Pastry Production NC II+ta", // 3
-    "Computer Systems Servicing NC II+ta", // 4
-    "Cookery NC II+ta", // 5
-    "Driving NC II+ta", // 6
-    "Electronic Products Assembly and Servicing NC II+ta", // 7
-    "Food and Beverage Services NC II+ta", // 9
-    "Housekeeping NC II+ta", // 11
-    "Trainers Methodology Level I+ta", // 13
-    "Visual Graphic Design NC III+ta", // 14
-    "Assembly of Solar Nightlight and Post Lamp+t", //0
-    "Events Management Services NC III+a", // 8
-    "Front Office Services NC II+a", // 10
-    "Real Estate Services NC II+a", // 12
+    "Bartending NC II+ta", // 0
+    "Bookkeeping NC III+ta", // 1
+    "Bread and Pastry Production NC II+ta", // 2
+    "Computer Systems Servicing NC II+ta", // 3
+    "Cookery NC II+ta", // 4
+    "Driving NC II+ta", // 5
+    "Electronic Products Assembly and Servicing NC II+ta", // 6
+    "Food and Beverage Services NC II+ta", // 7
+    "Housekeeping NC II+ta", // 8
+    "Trainers Methodology Level I+ta", // 9
+    "Visual Graphic Design NC III+ta", // 10
+    "Assembly of Solar Nightlight and Post Lamp+t", //11
+    "Events Management Services NC III+a", // 12
+    "Front Office Services NC II+a", // 13
+    "Real Estate Services NC II+a", // 14
 ];
 
 let trainingHours = [
-    
-    "438 hrs", // 1
-    "292 hrs", // 2
-    "196 hrs", // 3
-    "280 hrs", // 4
-    "316 hrs", // 5
-    "118 hrs", // 6
-    "260 hrs", // 7
-    "365 hrs", // 9
-    "436 hrs", // 11
-    "264 hrs", // 13
-    "501 hrs", // 14
-    "64 hrs", // 0
-    "", // 8
-    "", // 10
+    "438 hrs", // 0
+    "292 hrs", // 1
+    "196 hrs", // 2
+    "280 hrs", // 3
+    "316 hrs", // 4
+    "118 hrs", // 5
+    "260 hrs", // 6
+    "365 hrs", // 7
+    "436 hrs", // 8
+    "264 hrs", // 9
+    "501 hrs", // 10
+    "64 hrs", // 11
     "", // 12
+    "", // 13
+    "", // 14
 ];
 
 let classMode = [
