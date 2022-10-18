@@ -60,6 +60,7 @@ let sendWelcomeMessage = (sender_psid) => {
  
             let response3 = templateMessage.course();
 
+            await sendMessage(sender_psid, response1);
             await sendMessage(sender_psid, response2);
             await sendMessage(sender_psid, response3);
             resolve("done");
