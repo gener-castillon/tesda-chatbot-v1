@@ -108,6 +108,5 @@ module.exports = {
     newStudent: newStudent,
     courseIndex: courseIndex,
     programs: programs,
-    progDetails: progDetails,
     trainingDetails: trainingDetails
 };
