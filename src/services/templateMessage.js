@@ -18,9 +18,49 @@ let programs = [
     "Visual Graphic Design NC III" // 14
 ];
 
-let progDetails = [
-    programs[0].toUpperCase() + " \n "
+let trainingHours = [
+    "64 hrs",
+    "438 hrs",
+    "292 hrs",
+    "196 hrs",
+    "280 hrs",
+    "316 hrs",
+    "118 hrs",
+    "260 hrs",
+    "",
+    "365 hrs",
+    "",
+    "436 hrs",
+    "",
+    "264 hrs",
+    "501 hrs"
 ];
+
+let classMode = [
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+    "Class mode is blended, online or face-to-face",
+];
+
+let trainingDetails = () => {
+    return programs[courseIndex].toUpperCase() + " (" + trainingHours[courseIndex] + ")\n\n•" + classMode[courseIndex] + "\n\nTo enroll present the following documents:\n1. Copy of ID\n2. Birth Certificate\n3. Duly Accomplished Application Form\n\nRegarding for the tuition fee, schedule and other details please direct us through by calling 8569324 local 146 or personal here in our office. Thank you";
+};
+
+let assessmentDetails = () => {
+    return "";
+};
 
 let menuMessage = () => {
     return {
@@ -68,5 +108,6 @@ module.exports = {
     newStudent: newStudent,
     courseIndex: courseIndex,
     programs: programs,
-    progDetails: progDetails
+    progDetails: progDetails,
+    trainingDetails: trainingDetails
 };

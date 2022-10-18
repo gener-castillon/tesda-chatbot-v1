@@ -154,11 +154,11 @@ let handlePostback = async (sender_psid, received_postback) => {
             break;
 
         case 'TRAINING':
-            await chatbotService.setTrainingOrAssessment(sender_psid);
+            await chatbotService.setTrainingDetails(sender_psid);
             break;
 
         case 'ASSESSMENT':
-            await chatbotService.setTrainingOrAssessment(sender_psid);
+            await chatbotService.setAssessmentsDetails(sender_psid);
             break;
 
         default:
