@@ -12,7 +12,7 @@ let programs = [
     "Housekeeping NC II+ta", // 8
     "Trainers Methodology Level I+ta", // 9
     "Visual Graphic Design NC III+ta", // 10
-    "Assembly of Solar Nightlight and Post Lamp+t", //11
+    "Assembly of Solar Nightlight and Post Lamp+_t", //11
     "Events Management Services NC III+a", // 12
     "Front Office Services NC II+a", // 13
     "Real Estate Services NC II+a", // 14

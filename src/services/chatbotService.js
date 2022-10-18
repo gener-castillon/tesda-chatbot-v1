@@ -38,7 +38,7 @@ let sendWelcomeMessage = (sender_psid) => {
             // Trainings
             for (let i = 0; i < templateMessage.programs.length; i++) {
                 let str = templateMessage.programs[i].split("+");
-                if (str[1] == "t") {
+                if (str[1] == "_t") {
                     count += 1;
                     t += (count) + ". " + str[0] + "\n";
                 }

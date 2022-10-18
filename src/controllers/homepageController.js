@@ -81,7 +81,7 @@ let handleMessage = async (sender_psid, received_message) => {
     } else if (received_message.text) {
         let str = received_message.text;
         if (str == "1") {
-            templateMessage.courseIndex = 11;
+            templateMessage.courseIndex = 0;
             await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "2") {
             templateMessage.courseIndex = 1;
@@ -114,7 +114,7 @@ let handleMessage = async (sender_psid, received_message) => {
             templateMessage.courseIndex = 10;
             await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "12") {
-            templateMessage.courseIndex = 0;
+            templateMessage.courseIndex = 11;
             await chatbotService.selectedCourse(sender_psid, templateMessage.programs[templateMessage.courseIndex]);
         } else if (str == "13") {
             templateMessage.courseIndex = 12;
