@@ -1,7 +1,6 @@
 let courseIndex = 0;
 
 let programs = [
-    
     "Bartending NC II+ta", // 1
     "Bookkeeping NC III+ta", // 2
     "Bread and Pastry Production NC II+ta", // 3
