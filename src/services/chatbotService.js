@@ -55,7 +55,7 @@ let sendWelcomeMessage = (sender_psid) => {
 
             str1 = "TRAININGS AND ASSESSMENTS\n" + ta + "\nTRAININGS\n" + t + "\nASSESSMENTS\n" + a;
             let response2 = {
-                "text": "Hi " + name + "! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str1
+                "text": "Hi! Thanks for contacting us. We are TESDA registered Training and Assessment Center for the following programs: \n\n" + str1
             };
  
             let response3 = templateMessage.course();
