@@ -57,7 +57,7 @@ let classMode = [
 let trainingDetails = (i = 0) => {
     let str = programs[i].split("+");
     return {
-        "text": str[0].toUpperCase() + " (" + trainingHours[i] + ")\n\n" + classMode[i] + ", 8 hrs per day.\n\nTo enroll present the following documents:\n1. Copy of ID\n2. Birth Certificate\n3. Duly Accomplished Application Form\n\nRegarding for the tuition fee, schedule and other details please direct us through by calling 8569324 local 146 or personal here in our office. Thank you." 
+        "text": str[0].toUpperCase() + " (" + trainingHours[i] + ")\n\n" + classMode[i] + ", 8 hrs per day.\n\nTo enroll present the following documents:\n1. Copy of ID\n2. Birth Certificate\n3. Duly Accomplished Application Form\n\nRegarding for the tuition fee, schedule and other details please direct us through by calling 8569324 local 146 or personal here in our office. Thank you!" 
     };
 };
 
